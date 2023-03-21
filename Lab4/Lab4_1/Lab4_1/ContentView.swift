@@ -14,6 +14,7 @@ struct ContentView: View {
     @State private var amount: Int = 1
     @State private var showHours: Bool = false
     @State private var showContact: Bool = false
+    @State var isHidden: Bool = false
     var body: some View {
         VStack {
             Text("Kantor")
@@ -49,6 +50,21 @@ struct ContentView: View {
                 Text("Do zapłaty: \(self.currencies[self.sourceCurrency]! / self.currencies[self.destinationCurrency]! * Double(self.amount),specifier: "%.2f") \(self.destinationCurrency)")
             }
             Spacer()
+            if(!isHidden){
+                ZStack{
+                    Link(destination: URL(string: "http://empik.com")!){
+                        Image("unnamed")
+                            .resizable()
+                            .frame(width: 300, height:60)
+                    }
+                    Button(action: {isHidden = true}, label:{
+                        Text("X")
+                    }).background(Color.white)
+                        .font(.title2)
+                        .frame(width: 50, height:50)
+                        .offset(x: CGFloat(144),y: CGFloat(-20))
+                }
+            }
             HStack{
                 Button(action:{self.showHours = true}){
                     Image(systemName: "clock").resizable().frame(width:40,height:40)
