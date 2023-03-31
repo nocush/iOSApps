@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ThirdView: View {
     var body: some View {
-        TriangleView(color:.indigo,number:3)
-            .navigationBarTitle("Trójkąt indygo")
+        WeirdView(color: .blue)
+            .navigationBarTitle("Ta trzecia figura")
             .offset(y:-40)
     }
 }

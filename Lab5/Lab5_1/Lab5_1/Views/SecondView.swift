@@ -10,8 +10,8 @@ import SwiftUI
 struct SecondView: View {
     var body: some View {
         VStack{
-            SquareView(color:.red,number: 2)
-                .navigationBarTitle("Czerwony kwadrat")
+            SquareView(color:.purple)
+                .navigationBarTitle("Kwadrat")
                 .offset(y:-40)
             NavigationLink(destination: ThirdView(), label:{
                 Text("Następny ekran")

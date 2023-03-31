@@ -11,8 +11,8 @@ struct FirstView: View {
     var body: some View {
         NavigationView{
             VStack{
-                CircleView(color:.green,number: 1)
-                    .navigationBarTitle("Zielone koło")
+                TriangleView(color:.indigo,number:1)
+                    .navigationBarTitle("Trójkąt")
                     .offset(y:-40)
                 NavigationLink(destination: SecondView(), label:{
                     Text("Następny ekran")
