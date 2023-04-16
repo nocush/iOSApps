@@ -12,7 +12,7 @@ extension ViewController: UITableViewDelegate{
         print("row of table view")
     }
     
-    func tableView(_ tableView: UITableView, tittleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
             return "Houses"
         }
@@ -80,7 +80,7 @@ class ViewController: UIViewController {
     var flats = [
         Flat(name: "Flat 1", area: 92.37, roomCount: 4, isDuplex: true, photoPath: "flat1"),
         Flat(name: "Flat 2", area: 54.42, roomCount: 3, isDuplex: false, photoPath: "flat2"),
-        Flat(name: "Flat 3", area: 25.4, roomCount: 1, isDuplex: false, photoPath: "flat1")
+        Flat(name: "Flat 3", area: 25.4, roomCount: 1, isDuplex: false, photoPath: "flat3")
     ]
     
     

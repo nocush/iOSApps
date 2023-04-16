@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     private let booksManager = BooksManager()
     @State private var pickedAuthor: String = ""
-    @State private var ksiazki: [String] = [""]
+    //@State private var ksiazki: [String] = [""]
     var body: some View {
         NavigationView{
             VStack{
