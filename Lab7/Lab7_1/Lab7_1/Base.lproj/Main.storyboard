@@ -46,11 +46,11 @@
                                             <outlet property="housePhoto" destination="sz2-ik-21D" id="Lvf-fH-CI2"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="flats" rowHeight="114" id="Rzl-i2-Mxx" customClass="FlatCell" customModule="Lab7_1" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="144" width="361" height="114"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="flats" rowHeight="101" id="Rzl-i2-Mxx" customClass="FlatCell" customModule="Lab7_1" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="144" width="361" height="101"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rzl-i2-Mxx" id="rrc-B3-mCC">
-                                            <rect key="frame" x="0.0" y="0.0" width="361" height="114"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="101"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="waE-nb-JQS" userLabel="flatPhoto">

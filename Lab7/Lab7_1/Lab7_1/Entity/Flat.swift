@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Flat{
+struct Flat{
     var name: String
     var area: Double
     var roomCount: Int

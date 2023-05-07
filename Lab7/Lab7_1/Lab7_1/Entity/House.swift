@@ -7,7 +7,7 @@
 
 import Foundation
 
-class House{
+struct House{
     var name: String
     var houseArea: Double
     var roomCount: Int
