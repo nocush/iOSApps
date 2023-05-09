@@ -14,14 +14,7 @@ struct ContentView: View {
             List{
                 ForEach(events.indices, id: \.self) {id in
                     NavigationLink(destination: EditEvent(events: self.$events, index: id)){
-                        HStack{
-                            Image(systemName: "\(id+1).circle").resizable()
-                                .frame(width: 30, height: 30)
-                            VStack(alignment: .leading){
-                                Text("Nazwa: \(self.events[id].name)")
-                                Text("Czas trwania: "+String(format: "%.f", self.events[id].duration)+" minut")
-                            }.padding()
-                        }
+                        Row(event: $events[id],id:id)
                     }.padding()
                 }
             }
