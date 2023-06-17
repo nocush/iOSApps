@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E261" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Pudelko" representedClassName="Pudelko" syncable="YES">
+        <attribute name="capacity" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="smakCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="toSmak" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Smak" inverseName="smakToPudelko" inverseEntity="Smak"/>
+        <relationship name="toZamowienie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Zamowienie" inverseName="toPudelko" inverseEntity="Zamowienie"/>
+    </entity>
+    <entity name="Smak" representedClassName="Smak" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="smakToPudelko" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Pudelko" inverseName="toSmak" inverseEntity="Pudelko"/>
+    </entity>
+    <entity name="Zamowienie" representedClassName="Zamowienie" syncable="YES">
+        <attribute name="adres" optional="YES" attributeType="String"/>
+        <attribute name="imie" optional="YES" attributeType="String"/>
+        <attribute name="kwota" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="nazwisko" optional="YES" attributeType="String"/>
+        <attribute name="telefon" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="toPudelko" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Pudelko" inverseName="toZamowienie" inverseEntity="Pudelko"/>
+    </entity>
+</model>
