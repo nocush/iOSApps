@@ -7,36 +7,140 @@
 
 import SwiftUI
 
-enum Smak1: String, CaseIterable{
-    case SolonyKarmel, Bananowy, Truskawkowy, Waniliowy, Malinowy, Miętowy, Śmietankowy
-}
 
-struct Pudelko1: Identifiable{
-    var id = UUID()
-    var name: String
-    var ileSmakow: Int
-    var smaki: [Smak1]
-}
 
 struct Koszyk: View {
-    @State private var produkty: [Pudelko1] = [Pudelko1(name: "male pudelko", ileSmakow: 2, smaki: [])]
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Pudelko.name, ascending: true)],predicate: NSPredicate(format: "toZamowienie == nil"), animation:.default)
+    private var pudelka: FetchedResults<Pudelko>
+    
+    
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Zamowienie.imie,ascending: true)],animation:.default)
+    private var zamowienia: FetchedResults<Zamowienie>
+    var totalValue: Double{
+        pudelka.reduce(0){$0 + $1.cena}
+    }
+
+    @State private var imie: String = ""
+    @State private var nazwisko: String = ""
+    @State private var adres: String = ""
+    @State private var telefon: String = ""
+    @State private var zamowiono: Bool = false
+    @State private var errorText: String = ""
+    
+    
+    
+    func checkValues()->Bool{
+        guard totalValue != 0 && totalValue > 0 else{
+            errorText = "Koszyk jest pusty"
+            return true
+        }
+        guard imie != "" else{
+            errorText = "Błędne imie"
+            return true
+        }
+        guard nazwisko != ""  else{
+            errorText = "Błędne nazwisko"
+            return true
+        }
+        guard adres != "" else{
+            errorText = "Błędny adres"
+            return true
+        }
+        guard (telefon.count == 9 && (Int(telefon) != nil)) else{
+            errorText = "Błędny numer telefonu"
+            return true
+        }
+        return false
+    }
+    
+    func dodajZamowienie(){
+        let anyErrors = checkValues()
+        if(anyErrors) {
+            
+        }else {
+            let newZamowienie = Zamowienie(context: viewContext)
+            newZamowienie.imie = imie
+            newZamowienie.nazwisko = nazwisko
+            newZamowienie.adres = adres
+            newZamowienie.kwota = totalValue
+            newZamowienie.telefon = Int32(telefon)!
+            var pickedpudelka: [Pudelko] = Array()
+            for pudelko in pudelka{
+                pickedpudelka.append(pudelko)
+            }
+            newZamowienie.toPudelko = NSSet(array: pickedpudelka)
+            
+            for pudelko in pudelka {
+                pudelko.toZamowienie = newZamowienie
+            }
+            
+            do{
+                try viewContext.save()
+                errorText = ""
+                zamowiono = true
+            } catch {
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
+    }
+    private func deletePudelko(offsets: IndexSet){
+        withAnimation{
+            offsets.map{pudelka[$0]}.forEach(viewContext.delete)
+            do{
+                try viewContext.save()
+            } catch {
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError),\(nsError.userInfo)")
+            }
+        }
+    }
     var body: some View {
         NavigationView{
             VStack{
-                NavigationLink(destination: PickPudelko()){Text("Dodaj pudełko")}.offset(x:120)
+                Text("Koszyk").font(.largeTitle).padding()
             List{
-                ForEach(produkty){pudelko in
-                    Section(header:Text("\(pudelko.name)")){
-                        ForEach(0..<pudelko.ileSmakow){index in
-                            HStack{
-                                Text("Smak \(index+1): ")
-                            }
-                        }
+                ForEach(pudelka){pudelko in
+                    HStack{
+                        Text(pudelko.name!+": ")
+                        Text(String(format:"%.2f",pudelko.cena)+"zł")
                     }
+                }.onDelete(perform: deletePudelko)
                 }
+                Spacer()
+                
+                HStack{
+                    Text("Łączna kwota: ")
+                    Text(String(format:"%.2f",totalValue)+"zł")
                 }
+                Text(errorText).foregroundColor(Color.red)
+                HStack{
+                    Text("Imie: ")
+                    TextField("",text:$imie).frame(width:120)
+                }
+                HStack{
+                    Text("Nazwisko: ")
+                    TextField("",text:$nazwisko).frame(width:120)
+                }
+                HStack{
+                    Text("Adres: ")
+                    TextField("",text:$adres).frame(width:120)
+                }
+                HStack{
+                    Text("Telefon: ")
+                    TextField("",text:$telefon).frame(width:120)
+                }
+                Button(action:{dodajZamowienie()}){
+                    if(!zamowiono){
+                        Text("Złóż zamówienie")
+                    }else if (zamowiono){
+                        Text("Złożono zamówienie")
+                    }
+                }.disabled(zamowiono)
             }
-        }.navigationTitle("Zamówienie")
+        }.navigationTitle("Koszyk")
     }
 }
 

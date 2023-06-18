@@ -13,15 +13,17 @@
 		423481222A38525B00F566BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 423481212A38525B00F566BF /* Preview Assets.xcassets */; };
 		423481242A38525B00F566BF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423481232A38525B00F566BF /* Persistence.swift */; };
 		423481272A38525B00F566BF /* test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 423481252A38525B00F566BF /* test.xcdatamodeld */; };
-		423481372A38554A00F566BF /* Zamowienie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423481312A38554A00F566BF /* Zamowienie+CoreDataClass.swift */; };
-		423481382A38554A00F566BF /* Zamowienie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423481322A38554A00F566BF /* Zamowienie+CoreDataProperties.swift */; };
-		423481392A38554A00F566BF /* Smak+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423481332A38554A00F566BF /* Smak+CoreDataClass.swift */; };
-		4234813A2A38554A00F566BF /* Smak+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423481342A38554A00F566BF /* Smak+CoreDataProperties.swift */; };
-		4234813B2A38554A00F566BF /* Pudelko+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423481352A38554A00F566BF /* Pudelko+CoreDataClass.swift */; };
-		4234813C2A38554A00F566BF /* Pudelko+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423481362A38554A00F566BF /* Pudelko+CoreDataProperties.swift */; };
 		4234813E2A3855A300F566BF /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4234813D2A3855A300F566BF /* About.swift */; };
 		423481402A3855CE00F566BF /* Koszyk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4234813F2A3855CE00F566BF /* Koszyk.swift */; };
 		423481422A3CBFB600F566BF /* PickPudelko.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423481412A3CBFB600F566BF /* PickPudelko.swift */; };
+		42B9D31C2A3F40F6009D5569 /* editPudelko.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B9D31B2A3F40F6009D5569 /* editPudelko.swift */; };
+		42B9D31E2A3F68B0009D5569 /* Zamowienia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B9D31D2A3F68B0009D5569 /* Zamowienia.swift */; };
+		42B9D3312A3F6EE7009D5569 /* Zamowienie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B9D32B2A3F6EE7009D5569 /* Zamowienie+CoreDataClass.swift */; };
+		42B9D3322A3F6EE7009D5569 /* Zamowienie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B9D32C2A3F6EE7009D5569 /* Zamowienie+CoreDataProperties.swift */; };
+		42B9D3332A3F6EE7009D5569 /* Smak+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B9D32D2A3F6EE7009D5569 /* Smak+CoreDataClass.swift */; };
+		42B9D3342A3F6EE7009D5569 /* Smak+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B9D32E2A3F6EE7009D5569 /* Smak+CoreDataProperties.swift */; };
+		42B9D3352A3F6EE7009D5569 /* Pudelko+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B9D32F2A3F6EE7009D5569 /* Pudelko+CoreDataClass.swift */; };
+		42B9D3362A3F6EE7009D5569 /* Pudelko+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B9D3302A3F6EE7009D5569 /* Pudelko+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,15 +34,17 @@
 		423481212A38525B00F566BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		423481232A38525B00F566BF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		423481262A38525B00F566BF /* test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = test.xcdatamodel; sourceTree = "<group>"; };
-		423481312A38554A00F566BF /* Zamowienie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Zamowienie+CoreDataClass.swift"; sourceTree = "<group>"; };
-		423481322A38554A00F566BF /* Zamowienie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Zamowienie+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		423481332A38554A00F566BF /* Smak+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Smak+CoreDataClass.swift"; sourceTree = "<group>"; };
-		423481342A38554A00F566BF /* Smak+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Smak+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		423481352A38554A00F566BF /* Pudelko+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pudelko+CoreDataClass.swift"; sourceTree = "<group>"; };
-		423481362A38554A00F566BF /* Pudelko+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pudelko+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4234813D2A3855A300F566BF /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		4234813F2A3855CE00F566BF /* Koszyk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Koszyk.swift; sourceTree = "<group>"; };
 		423481412A3CBFB600F566BF /* PickPudelko.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickPudelko.swift; sourceTree = "<group>"; };
+		42B9D31B2A3F40F6009D5569 /* editPudelko.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editPudelko.swift; sourceTree = "<group>"; };
+		42B9D31D2A3F68B0009D5569 /* Zamowienia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zamowienia.swift; sourceTree = "<group>"; };
+		42B9D32B2A3F6EE7009D5569 /* Zamowienie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Zamowienie+CoreDataClass.swift"; sourceTree = "<group>"; };
+		42B9D32C2A3F6EE7009D5569 /* Zamowienie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Zamowienie+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		42B9D32D2A3F6EE7009D5569 /* Smak+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Smak+CoreDataClass.swift"; sourceTree = "<group>"; };
+		42B9D32E2A3F6EE7009D5569 /* Smak+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Smak+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		42B9D32F2A3F6EE7009D5569 /* Pudelko+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pudelko+CoreDataClass.swift"; sourceTree = "<group>"; };
+		42B9D3302A3F6EE7009D5569 /* Pudelko+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pudelko+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +61,12 @@
 		4234810E2A38525A00F566BF = {
 			isa = PBXGroup;
 			children = (
-				423481312A38554A00F566BF /* Zamowienie+CoreDataClass.swift */,
-				423481322A38554A00F566BF /* Zamowienie+CoreDataProperties.swift */,
-				423481332A38554A00F566BF /* Smak+CoreDataClass.swift */,
-				423481342A38554A00F566BF /* Smak+CoreDataProperties.swift */,
-				423481352A38554A00F566BF /* Pudelko+CoreDataClass.swift */,
-				423481362A38554A00F566BF /* Pudelko+CoreDataProperties.swift */,
+				42B9D32B2A3F6EE7009D5569 /* Zamowienie+CoreDataClass.swift */,
+				42B9D32C2A3F6EE7009D5569 /* Zamowienie+CoreDataProperties.swift */,
+				42B9D32D2A3F6EE7009D5569 /* Smak+CoreDataClass.swift */,
+				42B9D32E2A3F6EE7009D5569 /* Smak+CoreDataProperties.swift */,
+				42B9D32F2A3F6EE7009D5569 /* Pudelko+CoreDataClass.swift */,
+				42B9D3302A3F6EE7009D5569 /* Pudelko+CoreDataProperties.swift */,
 				423481192A38525A00F566BF /* test */,
 				423481182A38525A00F566BF /* Products */,
 			);
@@ -88,6 +92,8 @@
 				4234813D2A3855A300F566BF /* About.swift */,
 				4234813F2A3855CE00F566BF /* Koszyk.swift */,
 				423481412A3CBFB600F566BF /* PickPudelko.swift */,
+				42B9D31B2A3F40F6009D5569 /* editPudelko.swift */,
+				42B9D31D2A3F68B0009D5569 /* Zamowienia.swift */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -170,19 +176,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4234813B2A38554A00F566BF /* Pudelko+CoreDataClass.swift in Sources */,
-				423481372A38554A00F566BF /* Zamowienie+CoreDataClass.swift in Sources */,
+				42B9D3352A3F6EE7009D5569 /* Pudelko+CoreDataClass.swift in Sources */,
 				4234813E2A3855A300F566BF /* About.swift in Sources */,
-				423481382A38554A00F566BF /* Zamowienie+CoreDataProperties.swift in Sources */,
 				423481242A38525B00F566BF /* Persistence.swift in Sources */,
-				423481392A38554A00F566BF /* Smak+CoreDataClass.swift in Sources */,
+				42B9D3362A3F6EE7009D5569 /* Pudelko+CoreDataProperties.swift in Sources */,
 				423481272A38525B00F566BF /* test.xcdatamodeld in Sources */,
+				42B9D3342A3F6EE7009D5569 /* Smak+CoreDataProperties.swift in Sources */,
 				423481422A3CBFB600F566BF /* PickPudelko.swift in Sources */,
+				42B9D31C2A3F40F6009D5569 /* editPudelko.swift in Sources */,
+				42B9D3312A3F6EE7009D5569 /* Zamowienie+CoreDataClass.swift in Sources */,
+				42B9D31E2A3F68B0009D5569 /* Zamowienia.swift in Sources */,
+				42B9D3332A3F6EE7009D5569 /* Smak+CoreDataClass.swift in Sources */,
 				4234811D2A38525A00F566BF /* ContentView.swift in Sources */,
+				42B9D3322A3F6EE7009D5569 /* Zamowienie+CoreDataProperties.swift in Sources */,
 				4234811B2A38525A00F566BF /* testApp.swift in Sources */,
-				4234813C2A38554A00F566BF /* Pudelko+CoreDataProperties.swift in Sources */,
 				423481402A3855CE00F566BF /* Koszyk.swift in Sources */,
-				4234813A2A38554A00F566BF /* Smak+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,7 +2,7 @@
 //  Zamowienie+CoreDataProperties.swift
 //  test
 //
-//  Created by Mateusz Bartoszek on 13/06/2023.
+//  Created by Mateusz Bartoszek on 18/06/2023.
 //
 //
 
@@ -16,10 +16,10 @@ extension Zamowienie {
         return NSFetchRequest<Zamowienie>(entityName: "Zamowienie")
     }
 
-    @NSManaged public var imie: String?
-    @NSManaged public var nazwisko: String?
     @NSManaged public var adres: String?
+    @NSManaged public var imie: String?
     @NSManaged public var kwota: Double
+    @NSManaged public var nazwisko: String?
     @NSManaged public var telefon: Int32
     @NSManaged public var toPudelko: NSSet?
 

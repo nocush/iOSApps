@@ -2,7 +2,7 @@
 //  Smak+CoreDataProperties.swift
 //  test
 //
-//  Created by Mateusz Bartoszek on 13/06/2023.
+//  Created by Mateusz Bartoszek on 18/06/2023.
 //
 //
 

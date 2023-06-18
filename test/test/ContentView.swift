@@ -9,25 +9,34 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Smak.name, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Smak>
     
+    @State var offset: CGSize = .zero
 
     var body: some View {
             NavigationView{
                 VStack{
                     Image("logo").resizable().frame(width:300,height:300)
-                    NavigationLink(destination:Koszyk()){
+                        .offset(offset)
+                        .gesture(DragGesture().onChanged{
+                            value in withAnimation(.spring()){
+                                offset = value.translation
+                            }
+                        }
+                            .onEnded{value in
+                                withAnimation(.spring()){
+                                    offset = .zero
+                                }
+                            }
+                        )
+                    NavigationLink(destination:PickPudelko()){
                         Text("ZŁÓŻ ZAMÓWIENIE").font(.title)}
                     NavigationLink(destination: About()){
                         Image(systemName: "questionmark.circle").resizable().frame(width:40, height: 40)
                         
                     }.offset(x:150,y:-500)
-                    Text("POPRZEDNIE ZAMÓWIENIA").font(.title)
+                    NavigationLink(destination: Zamowienia()){
+                        Text("POPRZEDNIE ZAMÓWIENIA").font(.title)
+                    }
                 }
             }
         }

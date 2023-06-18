@@ -2,7 +2,7 @@
 //  Pudelko+CoreDataProperties.swift
 //  test
 //
-//  Created by Mateusz Bartoszek on 13/06/2023.
+//  Created by Mateusz Bartoszek on 18/06/2023.
 //
 //
 
@@ -16,10 +16,10 @@ extension Pudelko {
         return NSFetchRequest<Pudelko>(entityName: "Pudelko")
     }
 
-    @NSManaged public var name: String?
     @NSManaged public var capacity: Int32
-    @NSManaged public var smakCount: Int16
     @NSManaged public var cena: Double
+    @NSManaged public var name: String?
+    @NSManaged public var smakCount: Int16
     @NSManaged public var toSmak: NSSet?
     @NSManaged public var toZamowienie: Zamowienie?
 
