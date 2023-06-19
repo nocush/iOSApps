@@ -27,32 +27,48 @@ struct Koszyk: View {
     @State private var adres: String = ""
     @State private var telefon: String = ""
     @State private var zamowiono: Bool = false
-    @State private var errorText: String = ""
+    @State private var ifError: Bool = false
+    @State private var errorTexts: [String] = ["","","","",""]
     
     
     
     func checkValues()->Bool{
-        guard totalValue != 0 && totalValue > 0 else{
-            errorText = "Koszyk jest pusty"
-            return true
+        ifError = false
+        if totalValue <= 0{
+            errorTexts[0] = "Koszyk jest pusty"
+            ifError = true
+        }else{
+            errorTexts[0] = ""
         }
-        guard imie != "" else{
-            errorText = "Błędne imie"
-            return true
+        if imie == "" {
+            errorTexts[1] = "Błędne imie"
+            ifError = true
+        }else{
+            errorTexts[1] = ""
         }
-        guard nazwisko != ""  else{
-            errorText = "Błędne nazwisko"
-            return true
+        if nazwisko == ""  {
+            errorTexts[2] = "Błędne nazwisko"
+            ifError = true
+        }else{
+            errorTexts[2] = ""
         }
-        guard adres != "" else{
-            errorText = "Błędny adres"
-            return true
+        if adres == "" {
+            errorTexts[3] = "Błędny adres"
+            ifError = true
+        }else{
+            errorTexts[3] = ""
         }
-        guard (telefon.count == 9 && (Int(telefon) != nil)) else{
-            errorText = "Błędny numer telefonu"
-            return true
+        if (telefon.count != 9 || (Int(telefon) == nil)) {
+            errorTexts[4] = "Błędny numer telefonu"
+            ifError = true
+        }else {
+            errorTexts[4] = ""
         }
-        return false
+        if ifError == true {
+            return true
+        }else {
+            return false
+        }
     }
     
     func dodajZamowienie(){
@@ -78,7 +94,6 @@ struct Koszyk: View {
             
             do{
                 try viewContext.save()
-                errorText = ""
                 zamowiono = true
             } catch {
                 let nsError = error as NSError
@@ -114,23 +129,28 @@ struct Koszyk: View {
                 HStack{
                     Text("Łączna kwota: ")
                     Text(String(format:"%.2f",totalValue)+"zł")
+                    
                 }
-                Text(errorText).foregroundColor(Color.red)
+                Text(errorTexts[0]).foregroundColor(Color.red)
                 HStack{
                     Text("Imie: ")
-                    TextField("",text:$imie).frame(width:120)
+                        TextField("",text:$imie).frame(width:120)
+                    Text(errorTexts[1]).foregroundColor(Color.red)
                 }
                 HStack{
                     Text("Nazwisko: ")
                     TextField("",text:$nazwisko).frame(width:120)
+                    Text(errorTexts[2]).foregroundColor(Color.red)
                 }
                 HStack{
                     Text("Adres: ")
                     TextField("",text:$adres).frame(width:120)
+                    Text(errorTexts[3]).foregroundColor(Color.red)
                 }
                 HStack{
                     Text("Telefon: ")
                     TextField("",text:$telefon).frame(width:120)
+                    Text(errorTexts[4]).foregroundColor(Color.red)
                 }
                 Button(action:{dodajZamowienie()}){
                     if(!zamowiono){
@@ -138,7 +158,7 @@ struct Koszyk: View {
                     }else if (zamowiono){
                         Text("Złożono zamówienie")
                     }
-                }.disabled(zamowiono)
+                }.disabled(zamowiono).padding()
             }
         }.navigationTitle("Koszyk")
     }

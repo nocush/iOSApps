@@ -9,6 +9,7 @@ import SwiftUI
 
 struct editPudelko: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.presentationMode) var presentationMode : Binding<PresentationMode>
     
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Smak.name, ascending: true)], animation: .default)
     private var smaki: FetchedResults<Smak>
@@ -45,6 +46,7 @@ struct editPudelko: View {
         do{
             try viewContext.save()
             dodano = true
+            self.presentationMode.wrappedValue.dismiss()
         } catch {
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
