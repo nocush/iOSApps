@@ -22,7 +22,6 @@ struct editPudelko: View {
     @State var photoName: String
     @State var capacity: Int32
     @State var cena: Double
-    @State private var pickedSmaki: [String] = Array(repeating: "", count: 2)
     @State private var pickedSmak1: Smak = Smak()
     @State private var pickedSmak2: Smak = Smak()
     @State private var pickedSmak3: Smak = Smak()
